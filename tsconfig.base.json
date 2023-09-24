@@ -10,24 +10,22 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-learn/api/database": [
-        "apps/api/src/libs/database/src/index.ts"
+      "@ng-learn/api/database": ["apps/api/src/libs/database/src/index.ts"],
+      "@ng-learn/kanban/main/feature-shell": [
+        "libs/kanban/main/feature-shell/src/index.ts"
+      ],
+      "@ng-learn/kanban/tasks/feature/shell": [
+        "libs/kanban/tasks/feature/shell/src/index.ts"
       ],
       "@ng-learn/shared/util/api-interfaces": [
         "libs/shared/util/api-interfaces/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
