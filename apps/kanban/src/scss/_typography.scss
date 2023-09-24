@@ -1,0 +1,71 @@
+@use './utilities';
+
+@mixin headline-1($important: false) {
+  font: normal normal 500 20px/24px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.15px utilities.is-important($important);
+}
+
+@mixin headline-2($important: false) {
+  font: normal normal 500 20px/24px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: normal utilities.is-important($important);
+}
+
+@mixin headline-3($important: false) {
+  font: normal normal 500 14px/24px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.1px utilities.is-important($important);
+}
+
+@mixin headline-4($important: false) {
+  font: normal normal 700 12px/16px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 1.5px utilities.is-important($important);
+  text-transform: uppercase utilities.is-important($important);
+}
+
+@mixin subtitle($important: false) {
+  font: normal normal 400 16px/24px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.15px utilities.is-important($important);
+}
+
+@mixin body-1($important: false) {
+  font: normal normal 400 14px/20px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.25px utilities.is-important($important);
+}
+
+@mixin body-2($important: false) {
+  font: normal normal 700 14px/24px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.5px utilities.is-important($important);
+}
+
+@mixin caption($important: false) {
+  font: normal normal 400 12px/16px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.4px utilities.is-important($important);
+}
+
+@mixin link($important: false) {
+  font: normal normal 400 14px/22px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 0.4px utilities.is-important($important);
+  text-decoration: underline;
+}
+
+@mixin overline($important: false) {
+  font: normal normal 400 10px/16px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 1.5px utilities.is-important($important);
+  text-transform: uppercase utilities.is-important($important);
+}
+
+@mixin button($important: false) {
+  font: normal normal 500 14px/16px Roboto,
+  sans-serif utilities.is-important($important);
+  letter-spacing: 1.25px utilities.is-important($important);
+  text-transform: uppercase utilities.is-important($important);
+}

@@ -19,8 +19,14 @@
       "@ng-learn/kanban/main/feature-shell": [
         "libs/kanban/main/feature-shell/src/index.ts"
       ],
+      "@ng-learn/kanban/shared/util/constants": [
+        "libs/kanban/shared/util/constants/src/index.ts"
+      ],
       "@ng-learn/kanban/tasks/feature/shell": [
         "libs/kanban/tasks/feature/shell/src/index.ts"
+      ],
+      "@ng-learn/kanban/tasks/util/types": [
+        "libs/kanban/tasks/util/types/src/index.ts"
       ],
       "@ng-learn/shared/util/api-interfaces": [
         "libs/shared/util/api-interfaces/src/index.ts"

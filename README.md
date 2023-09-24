@@ -19,4 +19,6 @@ em `http://localhost:4200`
 3️⃣ [Grouping Libraries](https://nx.dev/more-concepts/grouping-libraries)  
 4️⃣ [Using Nx at Enterprises](https://nx.dev/more-concepts/monorepo-nx-enterprise)
 
-  
+### Links úteis
+
+[Ícones do Material Desing](https://fonts.google.com/icons?hl=pt-br&icon.set=Material+Icons&icon.query=board)

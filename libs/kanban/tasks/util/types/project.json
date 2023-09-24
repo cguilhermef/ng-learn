@@ -1,8 +1,8 @@
 {
-  "name": "kanban-tasks-feature-shell",
+  "name": "kanban-tasks-util-types",
   "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/kanban/tasks/feature/shell/src",
+  "sourceRoot": "libs/kanban/tasks/util/types/src",
   "prefix": "nlk",
   "targets": {
     "build": {
@@ -11,14 +11,14 @@
         "{workspaceRoot}/dist/{projectRoot}"
       ],
       "options": {
-        "project": "libs/kanban/tasks/feature/shell/ng-package.json"
+        "project": "libs/kanban/tasks/util/types/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/kanban/tasks/feature/shell/tsconfig.lib.prod.json"
+          "tsConfig": "libs/kanban/tasks/util/types/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/kanban/tasks/feature/shell/tsconfig.lib.json"
+          "tsConfig": "libs/kanban/tasks/util/types/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -29,7 +29,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "libs/kanban/tasks/feature/shell/jest.config.ts",
+        "jestConfig": "libs/kanban/tasks/util/types/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -37,15 +37,15 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/kanban/tasks/feature/shell/**/*.ts",
-          "libs/kanban/tasks/feature/shell/**/*.html"
+          "libs/kanban/tasks/util/types/**/*.ts",
+          "libs/kanban/tasks/util/types/**/*.html"
         ]
       }
     }
   },
   "tags": [
-    "type:feature",
+    "app:kanban",
     "scope:tasks",
-    "app:kanban"
+    "type:util"
   ]
 }
