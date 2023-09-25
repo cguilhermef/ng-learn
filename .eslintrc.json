@@ -50,10 +50,17 @@
               {
                 "onlyDependOnLibsWithTags": [
                   "scope:shared",
-                  "scope:tasks",
                   "app:kanban"
                 ],
                 "sourceTag": "scope:shared"
+              },
+              {
+                "onlyDependOnLibsWithTags": [
+                  "scope:shared",
+                  "scope:tasks",
+                  "app:kanban"
+                ],
+                "sourceTag": "scope:task"
               }
             ]
           }

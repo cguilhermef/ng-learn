@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { Task, TaskStatus } from '@ng-learn/kanban/tasks/util/types';
 import { Squads } from '@ng-learn/kanban/shared/util/constants';
 
@@ -10,6 +10,7 @@ import { Squads } from '@ng-learn/kanban/shared/util/constants';
 })
 export class ShellComponent {
   squads = Squads().list;
+  @HostBinding('class.tasks-feature-shell') t = true;
   tasks: Task[] = [
     {
       id: '1',
@@ -47,4 +48,8 @@ export class ShellComponent {
       status: TaskStatus.Backlog,
     },
   ];
+
+  tiraTask(taskTitle: string) {
+    this.tasks = this.tasks.filter((task) => task.title !== taskTitle);
+  }
 }

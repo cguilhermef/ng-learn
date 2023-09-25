@@ -2,8 +2,12 @@
   <div class="feature__content">
     <div class="feature__title">Tarefas</div>
 
-    <ng-container *ngFor="let task of tasks">
-      <pre>{{ task | json }}</pre>
-    </ng-container>
+    <nlk-task
+      *ngFor="let task of tasks"
+      [title]="task.title"
+      [description]="task.description"
+      (remove)="tiraTask($event)"
+    ></nlk-task>
+
   </div>
 </div>

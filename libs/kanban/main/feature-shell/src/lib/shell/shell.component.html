@@ -7,17 +7,18 @@
       </button>
       <span>KanbanFácil</span>
       <div class="sections">
-        <a routerLink="tasks" mat-button>
+        <a mat-button>
           <mat-icon>people</mat-icon>
           Usuários
         </a>
-        <button mat-button>
+        <a routerLink="tasks" mat-button>
           <mat-icon>splitscreen</mat-icon>
           Tarefas
-        </button>
+        </a>
       </div>
     </mat-toolbar>
   </div>
+  <!-- end header -->
   <div class="structure__body">
     <div class="main-content">
       <router-outlet></router-outlet>

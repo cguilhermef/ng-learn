@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../dist/libs/kanban/tasks/ui",
+  "lib": {
+    "entryFile": "src/index.ts"
+  }
+}
