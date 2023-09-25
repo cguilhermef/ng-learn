@@ -1,7 +1,7 @@
-# Frontend Challenge A
+# Ng Learn
 
-Este projeto é um simples ToDo List, com um bug incluso. O objetivo é encontrar e corrigir o bug, para
-que o projeto funcione em modo desenvolvimento.
+Este projeto para apoio em treinamentos de Angular. Ele contem uma estrutura básica inicial, com um app (kanban)
+recém criado, e com uma API mock.
 
 ## Instalação e execução
 
