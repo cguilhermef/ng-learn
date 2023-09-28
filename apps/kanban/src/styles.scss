@@ -1,11 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'scss/typography';
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$pink-palette, 500);
+$my-accent: mat.define-palette(mat.$blue-gray-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+  )
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-theme);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($my-theme);
+
+// Include the theme mixins for other components you use here.
+
 
 * {
   box-sizing: border-box;
 }
 
 html, body {
+  background-color: #2d2d2d;
+  color: rgba(255, 255, 255, 0.87);
   height: 100%;
   position: relative;
 }
@@ -55,16 +81,14 @@ nlk-root {
   display: flex;
   flex-direction: column;
   position: absolute;
+  padding: 24px 0 0 24px;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  overflow: hidden;
-  overflow-y: scroll;
 }
 
 .feature__content {
-  padding: 24px 48px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,4 +97,29 @@ nlk-root {
 
 .feature__title {
   @include typography.headline-2();
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 24px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.content--column {
+  flex-direction: column;
+}
+
+.content__aside {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.content__main {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  position: relative;
 }

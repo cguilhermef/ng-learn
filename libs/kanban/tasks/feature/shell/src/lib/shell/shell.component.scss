@@ -1,0 +1,34 @@
+nlk-task + nlk-task {
+  margin: 16px 0 0 0;
+}
+
+.tasks-form {
+  display: flex;
+}
+
+.tasks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tasks-list {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 8px;
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.tasks-list__column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 20%;
+  padding: 0 12px;
+
+  & + & {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}

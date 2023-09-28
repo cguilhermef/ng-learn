@@ -1,13 +1,33 @@
 <div class="feature">
+  <h3 class="feature__title mat-h2">Tarefas</h3>
   <div class="feature__content">
-    <div class="feature__title">Tarefas</div>
-
-    <nlk-task
-      *ngFor="let task of tasks"
-      [title]="task.title"
-      [description]="task.description"
-      (remove)="tiraTask($event)"
-    ></nlk-task>
+    <div class="content">
+      <div class="content__aside">
+        <!-- formulário de tasks -->
+        <div class="tasks-form">
+          <nlk-edit-task
+            (taskChange)="addTask($event)"></nlk-edit-task>
+        </div>
+        <!-- formulário de tasks end -->
+      </div>
+      <div class="content__main">
+        <div class="tasks">
+          <div class="tasks-list">
+            <div class="tasks-list__column">
+              <nlk-task
+                *ngFor="let task of tasks"
+                [title]="task.title"
+                [description]="task.description"
+                (remove)="tiraTask($event)"
+              ></nlk-task>
+            </div>
+            <div class="tasks-list__column"></div>
+            <div class="tasks-list__column"></div>
+            <div class="tasks-list__column"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

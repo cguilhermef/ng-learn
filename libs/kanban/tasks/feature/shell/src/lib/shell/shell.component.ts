@@ -33,23 +33,13 @@ export class ShellComponent {
         'Testar e reparar qualquer falha nos escudos defletores para garantir a proteção adequada contra ataques inimigos.',
       status: TaskStatus.Backlog,
     },
-    {
-      id: '4',
-      title: 'Manutenção dos canhões laser da Millennium Falcon',
-      description:
-        'Limpar e verificar o funcionamento dos canhões laser para garantir a eficácia durante combates espaciais.',
-      status: TaskStatus.Backlog,
-    },
-    {
-      id: '5',
-      title: 'Inspeção dos sistemas de suporte de vida da Millennium Falcon',
-      description:
-        'Verificar os sistemas de oxigênio, filtragem de ar e controle de temperatura para garantir um ambiente seguro e confortável para a tripulação.',
-      status: TaskStatus.Backlog,
-    },
   ];
 
   tiraTask(taskTitle: string) {
     this.tasks = this.tasks.filter((task) => task.title !== taskTitle);
+  }
+
+  addTask(task: Task) {
+    this.tasks = this.tasks.concat(task);
   }
 }

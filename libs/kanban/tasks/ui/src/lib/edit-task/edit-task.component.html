@@ -1,0 +1,24 @@
+<h4>Criar tarefa</h4>
+
+<form class="form" #form="ngForm">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Título</mat-label>
+    <input matInput placeholder="Placeholder" name="title"
+           [(ngModel)]="task.title"
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput placeholder="Placeholder" name="description"
+              [(ngModel)]="task.description"
+    ></textarea>
+  </mat-form-field>
+
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="create()">Criar
+  </button>
+</form>
