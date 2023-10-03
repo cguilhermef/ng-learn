@@ -14,8 +14,11 @@
         <div class="tasks">
           <div class="tasks-list">
             <div class="tasks-list__column">
+              <ng-container *ngIf="tasksEmpty$ | async">
+                Não tem itens
+              </ng-container>
               <nlk-task
-                *ngFor="let task of tasks"
+                *ngFor="let task of tasks$ | async"
                 [title]="task.title"
                 [description]="task.description"
                 (remove)="tiraTask($event)"
@@ -31,3 +34,6 @@
 
   </div>
 </div>
+
+
+<!-- templates -->

@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { EditTaskComponent } from './edit-task';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [TaskComponent, EditTaskComponent],
   exports: [TaskComponent, EditTaskComponent, MatFormFieldModule],

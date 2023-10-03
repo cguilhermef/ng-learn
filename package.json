@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js",
-    "start": "nx run-many --target=serve --projects=kanban",
+    "start": "nx run-many --target=serve --projects=kanban,api",
     "build": "nx build",
     "test": "nx test"
   },

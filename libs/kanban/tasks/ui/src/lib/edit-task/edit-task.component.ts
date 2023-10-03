@@ -5,6 +5,7 @@ import {
   Output,
 } from '@angular/core';
 import { Task, TaskStatus } from '@ng-learn/kanban/tasks/util/types';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'nlk-edit-task',
@@ -13,22 +14,23 @@ import { Task, TaskStatus } from '@ng-learn/kanban/tasks/util/types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditTaskComponent {
-  task = {
-    title: '',
-    description: '',
-  };
-
   @Output() taskChange = new EventEmitter<Task>();
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      id: this.fb.control<string>(''),
+      title: this.fb.control<string>(''),
+      description: this.fb.control<string>('', Validators.required),
+      status: this.fb.control<TaskStatus>(TaskStatus.Backlog),
+    });
+  }
 
   create() {
-    this.taskChange.emit({
-      id: '',
-      title: this.task.title,
-      description: this.task.description,
-      status: TaskStatus.Backlog,
-    });
-
-    this.task.title = '';
-    this.task.description = '';
+    if (!this.form.valid) {
+      return;
+    }
+    this.taskChange.emit(this.form.value);
+    this.form.reset();
   }
 }

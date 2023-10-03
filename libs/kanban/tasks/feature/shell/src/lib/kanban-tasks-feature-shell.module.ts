@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ShellComponent } from './shell';
 import { RouterModule } from '@angular/router';
 import { KanbanTasksUiModule } from '@ng-learn/kanban/tasks/ui';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     KanbanTasksUiModule,
+    HttpClientModule,
     RouterModule.forChild([
       {
         path: '',
