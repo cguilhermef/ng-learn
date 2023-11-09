@@ -32,9 +32,11 @@ export class ShellComponent implements OnInit {
 
   tiraTask(taskTitle: string) {
     this.tasks = this.tasks.filter((task) => task.title !== taskTitle);
+    this.tasks$.next(this.tasks);
   }
 
   addTask(task: Task) {
     this.tasks = this.tasks.concat(task);
+    this.tasks$.next(this.tasks);
   }
 }
