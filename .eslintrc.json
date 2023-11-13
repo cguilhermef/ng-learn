@@ -60,7 +60,7 @@
                   "scope:tasks",
                   "app:kanban"
                 ],
-                "sourceTag": "scope:task"
+                "sourceTag": "scope:tasks"
               }
             ]
           }
