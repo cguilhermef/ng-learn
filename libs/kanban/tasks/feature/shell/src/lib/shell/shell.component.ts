@@ -8,6 +8,7 @@ import { Task } from '@ng-learn/kanban/tasks/util/types';
 import { Squads } from '@ng-learn/kanban/shared/util/constants';
 import { HttpClient } from '@angular/common/http';
 import { map, Subject } from 'rxjs';
+import {TasksService} from "../tasks.service";
 
 @Component({
   selector: 'nlk-shell',
@@ -22,14 +23,14 @@ export class ShellComponent implements OnInit {
   tasks$ = new Subject<Task[]>();
   tasksEmpty$ = this.tasks$.pipe(map((tasks) => tasks.length === 0));
 
-  constructor(private http: HttpClient) {}
+  constructor(private tasksService: TasksService) {}
 
   ngOnInit() {
     this.getTasksApi();
   }
 
   tiraTask(taskId: string) {
-    this.http.delete(`/api/tasks/${taskId}`).subscribe(() => {
+    this.tasksService.tiraTask(taskId).subscribe(() => {
       this.getTasksApi();
     })
   }
@@ -39,13 +40,13 @@ export class ShellComponent implements OnInit {
   }
 
   saveTaskApi(task: Task) {
-    this.http.post('/api/tasks', task).subscribe((payload) => {
+    this.tasksService.saveTaskApi(task).subscribe((payload) => {
       this.getTasksApi();
     });
   }
 
   getTasksApi() {
-    this.http.get<Task[]>('/api/tasks').subscribe((tasks) => {
+    this.tasksService.getTasksApi().subscribe((tasks) => {
       this.tasks = this.tasks.concat(tasks);
       this.tasks$.next(tasks);
     });
