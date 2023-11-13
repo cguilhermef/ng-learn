@@ -25,18 +25,29 @@ export class ShellComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<Task[]>('/api/tasks').subscribe((tasks) => {
-      this.tasks$.next(tasks);
-    });
+    this.getTasksApi();
   }
 
-  tiraTask(taskTitle: string) {
-    this.tasks = this.tasks.filter((task) => task.title !== taskTitle);
-    this.tasks$.next(this.tasks);
+  tiraTask(taskId: string) {
+    this.http.delete(`/api/tasks/${taskId}`).subscribe(() => {
+      this.getTasksApi();
+    })
   }
 
   addTask(task: Task) {
-    this.tasks = this.tasks.concat(task);
-    this.tasks$.next(this.tasks);
+    this.saveTaskApi(task);
+  }
+
+  saveTaskApi(task: Task) {
+    this.http.post('/api/tasks', task).subscribe((payload) => {
+      this.getTasksApi();
+    });
+  }
+
+  getTasksApi() {
+    this.http.get<Task[]>('/api/tasks').subscribe((tasks) => {
+      this.tasks = this.tasks.concat(tasks);
+      this.tasks$.next(tasks);
+    });
   }
 }

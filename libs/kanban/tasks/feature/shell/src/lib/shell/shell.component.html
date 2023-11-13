@@ -19,6 +19,7 @@
               </ng-container>
               <nlk-task
                 *ngFor="let task of tasks$ | async"
+                [id]="task.id"
                 [title]="task.title"
                 [description]="task.description"
                 (remove)="tiraTask($event)"

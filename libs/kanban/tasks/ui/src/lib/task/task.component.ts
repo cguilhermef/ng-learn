@@ -13,6 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskComponent {
+  @Input() id = '';
   @Input() title = '';
   @Input() description = '';
   @Output() remove = new EventEmitter<string>();
@@ -27,6 +28,6 @@ export class TaskComponent {
    */
 
   removeTask() {
-    this.remove.emit(this.title);
+    this.remove.emit(this.id);
   }
 }
