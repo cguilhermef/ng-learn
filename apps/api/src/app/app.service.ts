@@ -23,7 +23,7 @@ export class AppService {
         id: uid,
         description: task.description,
         status: ApiInterfaces.TaskStatus.ToDo,
-        title: task.description,
+        title: task.title,
         squadId: '',
         userId: '',
       },
