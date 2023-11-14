@@ -8,7 +8,7 @@ import { Task } from '@ng-learn/kanban/tasks/util/types';
 import { Squads } from '@ng-learn/kanban/shared/util/constants';
 import { HttpClient } from '@angular/common/http';
 import { map, Subject } from 'rxjs';
-import {TasksService} from "../tasks.service";
+import {TasksService} from "@ng-learn/kanban/tasks/data-access";
 
 @Component({
   selector: 'nlk-shell',

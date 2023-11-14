@@ -4,13 +4,14 @@ import { ShellComponent } from './shell';
 import { RouterModule } from '@angular/router';
 import { KanbanTasksUiModule } from '@ng-learn/kanban/tasks/ui';
 import { HttpClientModule } from '@angular/common/http';
-import {TasksService} from "./tasks.service";
+import {KanbanTasksDataAccessModule} from "@ng-learn/kanban/tasks/data-access";
 
 @NgModule({
   imports: [
     CommonModule,
     KanbanTasksUiModule,
     HttpClientModule,
+    KanbanTasksDataAccessModule,
     RouterModule.forChild([
       {
         path: '',
@@ -18,9 +19,6 @@ import {TasksService} from "./tasks.service";
         component: ShellComponent,
       },
     ]),
-  ],
-  providers: [
-    TasksService
   ],
   exports: [RouterModule],
   declarations: [ShellComponent],
