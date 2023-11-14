@@ -22,6 +22,9 @@
       "@ng-learn/kanban/shared/util/constants": [
         "libs/kanban/shared/util/constants/src/index.ts"
       ],
+      "@ng-learn/kanban/tasks/data-access": [
+        "libs/kanban/tasks/data-access/src/index.ts"
+      ],
       "@ng-learn/kanban/tasks/feature/shell": [
         "libs/kanban/tasks/feature/shell/src/index.ts"
       ],
