@@ -9,6 +9,8 @@ import { Squads } from '@ng-learn/kanban/shared/util/constants';
 import { HttpClient } from '@angular/common/http';
 import { map, Subject } from 'rxjs';
 import {TasksService} from "@ng-learn/kanban/tasks/data-access";
+import {Store} from "@ngrx/store";
+import * as TasksActions from '@ng-learn/kanban/tasks/data-access';
 
 @Component({
   selector: 'nlk-shell',
@@ -23,10 +25,13 @@ export class ShellComponent implements OnInit {
   tasks$ = new Subject<Task[]>();
   tasksEmpty$ = this.tasks$.pipe(map((tasks) => tasks.length === 0));
 
-  constructor(private tasksService: TasksService) {}
+  constructor(
+    private tasksService: TasksService,
+    private store: Store
+  ) {}
 
   ngOnInit() {
-    this.getTasksApi();
+    this.store.dispatch(TasksActions.loadTasks())
   }
 
   tiraTask(taskId: string) {
