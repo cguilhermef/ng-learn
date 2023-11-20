@@ -12,13 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    RouterModule.forRoot([
+    RouterModule.forChild([
       {
         path: '',
         component: ShellComponent,
         children: [
           {
-            path: 'tasks',
+            path: '',
+            pathMatch: 'full',
             loadChildren: () =>
               import('@ng-learn/kanban/tasks/feature/shell').then(
                 (m) => m.KanbanTasksFeatureShellModule

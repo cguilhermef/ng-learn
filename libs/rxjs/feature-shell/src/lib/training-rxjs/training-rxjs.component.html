@@ -1,0 +1,11 @@
+<header>Treinamento RXJS</header>
+
+<div class="card-container">
+  <ng-container *ngFor="let obs$ of examples; index as idx">
+    <div class="card">
+      <span class="card__title">Observable #{{ idx + 1 }}</span>
+      <span class="card__result">Resultado: <span class="card__result-value">{{ obs$ | async }}</span></span>
+    </div>
+    <hr class="divider">
+  </ng-container>
+</div>

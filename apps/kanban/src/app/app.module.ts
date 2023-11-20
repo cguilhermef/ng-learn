@@ -9,13 +9,13 @@ import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {tasksReducer} from "../../../../libs/kanban/tasks/data-access/src/lib/+state/reducers";
 import {EffectsModule} from "@ngrx/effects";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterOutlet,
-    KanbanMainFeatureShellModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {
       runtimeChecks: {
@@ -28,7 +28,8 @@ import {EffectsModule} from "@ngrx/effects";
       logOnly: false,
       name: 'KanbanFácil',
     }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
